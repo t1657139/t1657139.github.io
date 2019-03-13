@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+header {
+	background-color: dodgerblue;
+	text-align: center;
+	font-size: 35px;
+	padding: 30px;
+}
+nav {
+	float: left;
+	background-color: deepskyblue;
+	padding: 10px;
+	height: 100px;
+	width: 10%;
+	text-align: center;
+}
+article{
+	float:left;
+	background-color: lightgray;
+	padding: 10px;
+	height: auto;
+	width: 90%;
+	text-align: center;
+}
+section:after{
+	display: table;
+	clear: both;
+	content: "";
+}
+footer{
+	background-color: dodgerblue;
+	text-align: center;
+	font-size: 20px;
+	padding: 10px;
+}
+@media screen and (max-width:800px) {
+  nav, article {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
