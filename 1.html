@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>	
+</head>
+<body>
+	<p id= "calculate">answer</p>
+	<input id= "number1" type= "number" value= 3>
+	<input id= "number2" type= "number" value= 5>
+	<button type= "button" onclick= "plus()">plus!</button>
+	<button type= "button" onclick= "minus()">minus!</button>
+	<button type= "button" onclick= "times()">times!</button>
+	<button type= "button" onclick= "divide()">divide!</button>
+	<button type= "button" onclick= "cancel()">C</button>
+	<br>
+	<button type= "button" onclick= "vendor()">發大財！</button>
+	<img id= image src="vendor.jpg">
+	<button type= "button" onclick= "KoreanFish()">韓國魚仔</button>
+	<p>請輸入成績：<input id= "grade" type="number"><button type="button" onclick="judge()">判定</button></p>
+	<p id= "judgement"></p>
+	<canvas id= "picture" width="420" height="180"></canvas>
+	<script>
+		function plus(x1,x2){
+			var x1,x2;
+			x1= document.getElementById("number1").value;
+			x2= document.getElementById("number2").value;
+			document.getElementById("calculate").innerHTML= x1+x2;//被當成字串
+		}
+		function minus(x1,x2){
+			var x1,x2;
+			x1= document.getElementById("number1").value;
+			x2= document.getElementById("number2").value;
+			document.getElementById("calculate").innerHTML= (x1-x2);
+		}
+		function times(x1,x2){
+			var x1,x2;
+			x1= document.getElementById("number1").value;
+			x2= document.getElementById("number2").value;
+			document.getElementById("calculate").innerHTML= (x1*x2);
+		}
+		function divide(x1,x2){
+			var x1,x2;
+			x1= document.getElementById("number1").value;
+			x2= document.getElementById("number2").value;
+			document.getElementById("calculate").innerHTML= (x1/x2);
+		}
+		function cancel(){			
+			document.getElementById("number1").value= 0;
+			document.getElementById("number2").value= 0;
+			document.getElementById("calculate").innerHTML= "answer";
+		}
+		function vendor(){
+			document.getElementById("image").src= "vendor.jpg";
+		}
+		function KoreanFish(){
+			document.getElementById("image").src= "koreanfish.jpg";
+		}
+		function judge(){
+			var x= document.getElementById("grade").value;
+			if (x<60)
+			{
+				document.getElementById("judgement").innerHTML= "不及格！";
+			}
+			else if(x>=60)
+			{
+				document.getElementById("judgement").innerHTML= "非常好！";
+			}
+		}
+	</script>
+	<script>
+		var canvas= document.getElementById("picture");
+		var pen = canvas.getContext("2d");
+		pen.fillRect(0,0,420,180);
+		pen.clearRect(105,45,10,5);
+		var i=10;
+		var time= setInterval(move,50);		
+		function move(){
+			if(i==310){
+				pen.fillRect(0,0,420,180);
+				i=10;
+			}
+			pen.fillRect(0,0,420,180);
+			pen.clearRect(105+i,45,10,5);
+			i=i+10;
+		}
+	</script>
+	
+</body>
+</html>
